@@ -1,3 +1,4 @@
+////////////////////
 // Die Prototype
 var Die = function() {
   this.sideUp = 0;
@@ -16,7 +17,9 @@ Die.prototype.toDOM = function() {
   return die
 };
 // END Die Prototype
+////////////////////
 
+////////////////////
 // Board Prototype
 var Board = function() {
   this.dice = [];
@@ -27,7 +30,7 @@ Board.prototype.addDie = function(die) {
 };
 
 Board.prototype.rollDice = function() {
-  $.each(this.dice, function(i, die) {
+  $(this.dice).each( function(i, die) {
     die.roll();
   });
 };
@@ -36,21 +39,22 @@ Board.prototype.rollDice = function() {
 Board.prototype.toDOM = function() {
   var board = $(document.createElement('div'));
   board.addClass('board');
-  $.each(this.dice, function(i, die) {
+  $(this.dice).each( function(i, die) {
     board.append(die.toDOM());
   });
   return board;
 };
 // END Board Prototype
+////////////////////
 
+////////////////////
 // Controller Code
 $(document).ready(function() {
 
   var board = new Board();
 
   $('#roller button.add').on('click', function() {
-    var die = new Die();
-    board.addDie(die);
+    board.addDie(new Die());
     refreshBoard();
   });
 
