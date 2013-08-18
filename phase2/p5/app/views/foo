@@ -1,0 +1,5 @@
+
+<form action='/events' method='post'>
+  <input type='text' name='event[organiser_name]' placeholder='organiser name'>
+  <input type='text' name='event[organiser_email]'placeholder='organiser email'>
+  <input type='date' name='event[date]' placeholder='event date'>

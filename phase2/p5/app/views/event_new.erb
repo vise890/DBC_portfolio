@@ -1,0 +1,7 @@
+<form action='/events/new' method='post'>
+  <input type='text' <%= error_class?(:organizer_name, @errors) %> name='event[organizer_name]' placeholder='organiser name' value='<%= @event.organizer_name %>' />
+  <input type='text' <%= error_class?(:organizer_email, @errors) %> name='event[organizer_email]'placeholder='organiser email' value='<%= @event.organizer_email %>' />
+  <input type='date' <%= error_class?(:date, @errors) %> name='event[date]' placeholder='event date' value='<%= @event.date %>' />
+  <input type="text" <%= error_class?(:title, @errors) %> name="event[title]" placeholder='event title'value='<%= @event.title %>' />
+  <input type='submit' value='Create an event'>
+</form>
