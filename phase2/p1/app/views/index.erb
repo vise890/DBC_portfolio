@@ -1,0 +1,8 @@
+<div class="container">
+  <% if @notes %>
+    <% @notes.each do |note| %>
+      <% @note = note %>
+      <%= erb :note  %>
+    <% end %>
+  <% end %>
+</div>

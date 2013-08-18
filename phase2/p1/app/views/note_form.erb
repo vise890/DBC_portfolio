@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Welcome to Sinatra!</h1>
+  <% form_action = case @note
+                   when nil then '/notes'
+                   else "/notes/#{@note.id}"
+                   end
+  %>
+  <form action='<%= form_action %>' method='POST'>
+    <input type='text' name='title' value='<%= @note.try(:title) %>'>
+    <textarea name="content" cols="30" rows="10"><%= @note.try(:content) %></textarea>
+    <% if @note %>
+      <input type="hidden" name="_method" value="put">
+    <% end %>
+    <input type="submit" value='new note!'>
+  </form>
+</div>

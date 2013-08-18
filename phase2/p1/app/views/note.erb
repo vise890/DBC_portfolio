@@ -1,0 +1,9 @@
+<h2><%= @note.title %></h2>
+<div><%= @note.content %></div>
+<a href="/notes/<%= @note.id %>/edit">Edit</a>
+<form action='/notes/<%= @note.id %>' method='post'>
+  <input type='hidden' name="_method" value='delete'>
+  <input type='submit' value='Delete'>
+</form>
+<hr>
+
