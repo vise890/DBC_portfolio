@@ -4,14 +4,17 @@
     <title></title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="application.js"></script>
-    <link href="application.css" type="text/css" rel="stylesheet"></link>
+    <link href="application.css" type="text/css" rel="stylesheet">
   </head>
 
 
   <body>
     <div id="todo">
       <div class="toolbox">
-        <input type="text" class="todo" /><button class="add">Add Todo</button>
+        <form id='todo-add' action="#" method="post" accept-charset="utf-8">
+          <input type="text" class="todo" />
+          <input type='submit' class="add" value='Add Todo' />
+        </form>
       </div>
 
       <div class="todo_list">

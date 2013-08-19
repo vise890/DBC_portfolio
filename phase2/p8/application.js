@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
+  $('input.todo').focus();
+
   function bindEvents() {
-    $('.toolbox .add').on('click', function() {
+    $('#todo-add').submit( function(e) {
+      e.preventDefault();
       addTodo();
     });
 
@@ -27,6 +30,7 @@ $(document).ready(function() {
   function addTodo() {
     var todoName = $('input.todo').val();
     $('input.todo').val('');
+    $('input.todo').focus();
 
     if(todoName != '') {
       var todo = buildTodo(todoName);
