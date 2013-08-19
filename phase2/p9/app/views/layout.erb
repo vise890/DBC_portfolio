@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src='/js/jquery.cookie.js' type="text/javascript" charset="utf-8"></script>
+  <script src="/js/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div id="container">
+    <%= yield %>
+  </div>
+  <nav>
+  <ul>
+    <li><a href="/">How awesome?</a></li>
+    <li><a href="/skills/nunchuks">What Skills?</a></li>
+    <li><a href="/meals">Favorite Meal</a></li>
+  </ul>
+  </nav>
+
+  <hr>
+  <hr>
+
+  <form id='set_color' action="/color" method="post" accept-charset="utf-8">
+    <input type="text" name="color" id="color" placeholder="fav. colour?" />
+    <input type="submit" value="Set!" />
+  </form>
+
+</body>
+</html>
