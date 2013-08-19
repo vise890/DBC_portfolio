@@ -18,6 +18,9 @@ get '/meals' do
   erb :meals
 end
 
+# this route is only used as AJAX fallback
+# in the current implementation, cookies are
+# set in the client through a jQuery plugin
 post '/color' do
   response.set_cookie('color', value: params[:color],
             domain: '',
