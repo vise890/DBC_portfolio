@@ -1,0 +1,8 @@
+.container.well
+  - if logged_in?
+    %h1 Registered Users
+    %hr
+    - @users.each do |user|
+      %p= "#{user.name} (#{user.email})"
+  - else
+    %h1 Welcome, new user

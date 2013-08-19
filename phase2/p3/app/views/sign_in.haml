@@ -1,0 +1,12 @@
+.well.container
+  %h1 Sign In
+  %form#sign-in{ method: "post", action: "/sessions" }
+
+    %label{ for: "email" } Email
+    %input.form-control{ type: "email", name: "email", placeholder: "e.g., me@example.com", value: "#{@email}" }
+
+    %label{ for: "password" } Password
+    %input.form-control{ type: "password", name: "password", placeholder: "6 or more characters" }
+
+    %br
+    %input.btn.btn-success{ type: "submit", value: "Sign In" }
